@@ -110,7 +110,8 @@ const TaskTracker = () => {
             </div>
             <div className="flex flex-col mt-10 justify-center items-center mx-auto w-3/4">
                 <div className="flex w-full">
-                    <div className="border mx-4 p-4 w-1/2">
+                    {/* first task item */}
+                    <div className="border-dashed border-2 mx-4 p-4 w-1/2">
                         <div className="flex w-full py-2">
                             <div className="flex flex-col justify-start w-1/2">
                                 <h4 className="text-start text-white font-semibold damn">
@@ -129,7 +130,8 @@ const TaskTracker = () => {
                             12 March
                         </p>
                     </div>
-                    <div className="border mx-4 p-4 w-1/2">
+                    {/* second task item */}
+                    <div className="border-dashed border-2 mx-4 p-4 w-1/2">
                         <div className="flex w-full py-2">
                             <div className="flex flex-col justify-start w-1/2">
                                 <h4 className="text-start text-white font-semibold damn">

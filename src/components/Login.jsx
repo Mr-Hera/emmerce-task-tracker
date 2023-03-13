@@ -1,6 +1,6 @@
 import React from 'react'
 
-const TaskTracker = () => {
+const Login = () => {
   return (
     <>
         <div className="flex-col my-4 border-l-8 p-8 w-1/8">
@@ -75,4 +75,4 @@ const TaskTracker = () => {
   )
 }
 
-export default TaskTracker
+export default Login

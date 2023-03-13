@@ -1,6 +1,6 @@
 # EMMERCE-TASK-TRACKER
 
-Fronted link - 
+Fronted link - https://emmerce-task-tracker.netlify.app/
 Backend link - 
 
 # USAGE

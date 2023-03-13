@@ -2,7 +2,7 @@ import { useState } from 'react'
 import reactLogo from './assets/react.svg'
 import './App.css'
 import { Routes, Route } from "react-router-dom";
-import { TaskTracker, Overview, SignUp, Login } from './components'
+import { TaskTracker, Overview, SignUp, Login } from './pages'
 import { About } from './pages'
 
 function App() {

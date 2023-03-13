@@ -67,7 +67,12 @@ const SignUp = () => {
             
         </div>
         <div className="flex flex-col justify-center my-4 p-8 w-3/4">
-            <div className="flex justify-center align-center mx-auto w-3/4 p-8">
+            <div className="flex flex-col mt-40  justify-center align-center mx-auto w-3/4">
+                <div className="border-b w-3/4 m-10 p-4">
+                    <h4 className="text-center text-white font-semibold text-4xl damn">
+                        SIGN UP HERE...
+                    </h4>
+                </div>
                 <form className="flex flex-col w-3/4 m-10 ">
                     <div className="relative border-0 p-3 placeholder:text-2xl placeholder-current mb-3 px-2">
                         <input
@@ -95,6 +100,13 @@ const SignUp = () => {
                     >
                         SIGN UP
                     </button>
+                    <div className="container mx-auto w-full m-5 p-3 border-spacing-4 bg-sky-500/5">
+                        <p className="text-xl text-white text-center damn">
+                        {" "}
+                        By clicking on Sign Up, you accept our{" "}
+                        <u>Subscriptions Agreement</u> and <u>Privacy Policy</u>
+                        </p>
+                    </div>
                 </form>
             </div>
         </div>

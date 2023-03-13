@@ -67,7 +67,12 @@ const Login = () => {
             
         </div>
         <div className="flex flex-col justify-center my-4 p-8 w-3/4">
-            <div className="flex justify-center align-center mx-auto w-3/4 p-8">
+            <div className="flex flex-col justify-center align-center mx-auto w-3/4 p-8">
+                <div className="border-b w-3/4 m-10 p-4">
+                    <h4 className="text-center text-white font-semibold text-4xl damn">
+                        LOG IN HERE...
+                    </h4>
+                </div>
                 <form className="flex flex-col w-3/4 m-10 ">
                     <div className="relative border-0 p-3 placeholder:text-2xl placeholder-current mb-3 px-2">
                         <input

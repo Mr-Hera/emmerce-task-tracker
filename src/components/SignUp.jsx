@@ -92,7 +92,7 @@ const SignUp = () => {
                         className="peer bg-black text-2xl text-white border w-full p-4 placeholder-transparent transition duration-200"
                         placeholder="Password"
                         />
-                        <label for="password" className="absolute text-2xl font-semibold text-opacity-80 left-0 -top-2 bg-black text-white p-0.5 transition-all peer-placeholder-shown:top-7 peer-placeholder-shown:font-normal mx-6 transition duration-200 input-text">Password</label>
+                        <label for="password" className="absolute text-2xl font-semibold text-opacity-80 left-0.5 -top-2 bg-black text-white p-0.5 transition-all peer-placeholder-shown:top-7 peer-placeholder-shown:font-normal mx-6 transition duration-200 input-text">Password</label>
                     </div>
                     <button
                         className="p-3 px-2 pt-2 text-white font-semibold md:bg-blue-800 md:w-full md:hover:bg-blue-700 sm:bg-blue-700"

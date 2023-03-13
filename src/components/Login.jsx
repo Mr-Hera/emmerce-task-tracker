@@ -1,6 +1,8 @@
-import React from 'react'
+import React, { useState } from 'react'
 
 const Login = () => {
+    const [username, setUserName] = useState("");
+    const [password, setPassword] = useState('');
   return (
     <>
         <div className="flex-col my-4 border-l-8 p-8 w-1/8">

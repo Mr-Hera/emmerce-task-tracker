@@ -73,7 +73,7 @@ const About = () => {
             <span className="text-4xl font-semibold font-serif">Empower</span>  your workplace with the power of effective task management and generate maximum productivity. 
             An easy-to-use <span className="text-4xl font-semibold font-serif">free</span> of cost solution that offers effective team management.The tool helps in the division 
             of tasks into the measurable matrix. Thus, allowing an accountable, <span className="text-4xl font-semibold font-serif">efficient</span> and 
-            <span className="text-4xl font-semibold font-serif">productive</span> work environment to thrive.
+            <span className="text-4xl font-semibold font-serif"> productive</span> work environment to thrive.
           </h4> 
         </div>
       </div>

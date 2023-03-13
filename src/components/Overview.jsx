@@ -46,21 +46,21 @@ const Overview = () => {
             </a>
             <div className="flex flex-col relative justify-end h-3/4">
                 <div className="flex-col relative">
-                    <a href="/about">
+                    <Link to="/about">
                         <div className="flex-col relative">
                             <h1 className="flex align-center pl-4 py-1 text-white text-5xl damn hover:bg-white hover:font-bold hover:text-black hover:text:6xl">ABOUT</h1>
                         </div>
-                    </a>
-                    <a href="/sign-up">
+                    </Link>
+                    <Link to="/sign-up">
                         <div className="flex-col relative">
                             <h1 className="flex align-center pl-4 py-1 text-white text-5xl damn hover:bg-white hover:font-bold hover:text-black hover:text:6xl">SIGNUP</h1>
                         </div>
-                    </a>
-                    <a href="/login">
+                    </Link>
+                    <Link to="/login">
                         <div className="flex-col relative">
                             <h1 className="flex align-center pl-4 py-1 text-white text-5xl damn hover:bg-white hover:font-bold hover:text-black hover:text:6xl">LOGIN</h1>
                         </div>
-                    </a>
+                    </Link>
                 </div>
                 
             </div>

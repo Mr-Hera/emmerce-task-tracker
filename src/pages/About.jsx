@@ -1,4 +1,6 @@
 import React from 'react'
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { faInfoCircle } from '@fortawesome/free-solid-svg-icons'
 
 const About = () => {
   return (
@@ -65,6 +67,7 @@ const About = () => {
         </div>
       </div>
       <div className="flex flex-col justify-center my-4 p-8 w-3/4">
+        <FontAwesomeIcon className="mt-12 mb-8" style={{ fontSize: 80, color: "white" }} icon={faInfoCircle} />
         <div className="flex align-center mx-auto w-3/4 p-8">
           <h4 className="text-2xl text-center text-white damn">
             <span className="text-4xl font-semibold font-serif">Empower</span>  your workplace with the power of effective task management and generate maximum productivity. 

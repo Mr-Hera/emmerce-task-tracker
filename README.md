@@ -1,10 +1,11 @@
 # EMMERCE-TASK-TRACKER
 
 Fronted link - https://emmerce-task-tracker.netlify.app/
-Backend link - 
+Backend link - https://emmerce-task-tracker-api-production.up.railway.app/
 
 # USAGE
 
+    ● On signup/login user is redirected into the task tracker where tasks can be created, viewed, edited & deleted accordingly
 
 # PROJECT DESCRIPTION
 

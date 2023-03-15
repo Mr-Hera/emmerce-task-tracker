@@ -89,6 +89,16 @@ const SignUp = () => {
                     </div>
                     <div className="relative border-0 p-3 placeholder:text-2xl placeholder-current mb-3 px-2">
                         <input
+                            id="email"
+                            name="email"
+                            type="text"
+                            className="peer bg-black text-2xl text-white border w-full p-4 placeholder-transparent transition duration-200"
+                            placeholder="Email"
+                        />
+                        <label for="email" className="absolute text-2xl font-semibold text-opacity-80 left-0 -top-2 bg-black text-white p-0.5 transition-all peer-placeholder-shown:top-7 peer-placeholder-shown:font-normal peer-placeholder-shown:bg-transparent mx-6 transition duration-200 input-text">Email</label>
+                    </div>
+                    <div className="relative border-0 p-3 placeholder:text-2xl placeholder-current mb-3 px-2">
+                        <input
                         id="password"
                         name="password"
                         type="password"

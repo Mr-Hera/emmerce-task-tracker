@@ -1,9 +1,35 @@
 import React, { useState } from 'react'
 import { Link } from 'react-router-dom';
+import { useParams } from "react-router-dom";
+import { useGetLoggedInQuery } from "../redux/services/taskCore";
 
 const Login = () => {
+
+    const [user, setUser] = useState(null);
     const [username, setUserName] = useState("");
-    const [password, setPassword] = useState('');
+    const [password, setPassword] = useState("");
+
+    function handleLogin(user) {
+        setUser(user);
+    }
+
+    function handleSubmit(e) {
+        e.preventDefault();
+        fetch("https://emmerce-task-tracker-api-production.up.railway.app/login/", {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify({ username, password }),
+        }).then((r) => {
+          if (r.ok) {
+            r.json().then((user) => setUser(user));
+          }
+        });
+        setUserName("");
+        setPassword("");
+    }
+    
   return (
     <>
         <div className="flex-col my-4 border-l-8 p-8 w-1/8">
@@ -54,7 +80,7 @@ const Login = () => {
                             <h1 className="flex align-center pl-4 py-1 text-white text-5xl damn hover:bg-white hover:font-bold hover:text-black hover:text:6xl">ABOUT</h1>
                         </div>
                     </Link>
-                    <Link to="/sign-up">
+                    <Link to="/register">
                         <div className="flex-col relative">
                             <h1 className="flex align-center pl-4 py-1 text-white text-5xl damn hover:bg-white hover:font-bold hover:text-black hover:text:6xl">SIGNUP</h1>
                         </div>
@@ -76,7 +102,7 @@ const Login = () => {
                         LOG IN HERE...
                     </h4>
                 </div>
-                <form className="flex flex-col w-3/4 m-10 ">
+                <form onSubmit={handleSubmit} className="flex flex-col w-3/4 m-10 ">
                     <div className="relative border-0 p-3 placeholder:text-2xl placeholder-current mb-3 px-2">
                         <input
                             id="username"
@@ -84,8 +110,10 @@ const Login = () => {
                             type="text"
                             className="peer bg-black text-2xl text-white border w-full p-4 placeholder-transparent transition duration-200"
                             placeholder="Username"
+                            value={username}
+                            onChange = { (e) => setUserName(e.target.value) }
                         />
-                        <label for="username" className="absolute text-2xl font-semibold text-opacity-80 left-0 -top-2 bg-black text-white p-0.5 transition-all peer-placeholder-shown:top-7 peer-placeholder-shown:font-normal peer-placeholder-shown:bg-transparent mx-6 transition duration-200 input-text">Username</label>
+                        <label htmlFor="username" className="absolute text-2xl font-semibold text-opacity-80 left-0 -top-2 bg-black text-white p-0.5 transition-all peer-placeholder-shown:top-7 peer-placeholder-shown:font-normal peer-placeholder-shown:bg-transparent mx-6 transition duration-200 input-text">Username</label>
                     </div>
                     <div className="relative border-0 p-3 placeholder:text-2xl placeholder-current mb-3 px-2">
                         <input
@@ -94,12 +122,15 @@ const Login = () => {
                             type="password"
                             className="peer bg-black text-2xl text-white border w-full p-4 placeholder-transparent transition duration-200"
                             placeholder="Password"
+                            value={password}
+                            onChange = { (e) => setPassword(e.target.value) }
                         />
-                        <label for="password" className="absolute text-2xl font-semibold text-opacity-80 left-0.5 -top-2 bg-black text-white p-0.5 transition-all peer-placeholder-shown:top-7 peer-placeholder-shown:font-normal mx-6 transition duration-200 input-text">Password</label>
+                        <label htmlFor="password" className="absolute text-2xl font-semibold text-opacity-80 left-0.5 -top-2 bg-black text-white p-0.5 transition-all peer-placeholder-shown:top-7 peer-placeholder-shown:font-normal mx-6 transition duration-200 input-text">Password</label>
                     </div>
                     <button
                         className="p-3 px-2 pt-2 text-white font-semibold md:bg-green-800 md:w-full md:hover:bg-green-700 sm:bg-blue-700"
                         type="submit"
+                        onClick={handleLogin}
                     >
                         SIGN IN
                     </button>

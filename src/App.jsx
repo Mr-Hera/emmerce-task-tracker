@@ -1,4 +1,4 @@
-import { useState } from 'react'
+import { useState, useEffect } from 'react'
 import reactLogo from './assets/react.svg'
 import './App.css'
 import { Routes, Route } from "react-router-dom";
@@ -12,12 +12,10 @@ function App() {
       <Routes>
         <Route path="/" element={ <Overview /> } />
         <Route path="/about" element={ <About /> } />
-        <Route path="/sign-up" element={ <SignUp /> } />
+        <Route path="/register" element={ <SignUp /> } />
         <Route path="/login" element={ <Login /> } />
-        <Route path="/task-tracker" element={ <TaskTracker /> } />
+        <Route path="/tasks" element={ <TaskTracker /> } />
       </Routes>
-      
-      
     </div>
   </>
 }

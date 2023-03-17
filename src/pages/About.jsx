@@ -54,7 +54,7 @@ const About = () => {
                 <h1 className="flex align-center pl-4 py-1 text-white text-5xl damn hover:bg-white hover:font-bold hover:text-black hover:text:6xl">ABOUT</h1>
               </div>
             </Link>
-            <Link to="/sign-up">
+            <Link to="/register">
               <div className="flex-col relative">
                 <h1 className="flex align-center pl-4 py-1 text-white text-5xl damn hover:bg-white hover:font-bold hover:text-black hover:text:6xl">SIGNUP</h1>
               </div>

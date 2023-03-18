@@ -1,5 +1,5 @@
 import axios from 'axios';
-import React, { useState } from 'react'
+import React, { useState, useEffect } from 'react'
 import { Link } from 'react-router-dom';
 import Task from '../components/Task';
 import { useGetTasksQuery } from '../redux/services/taskCore'
@@ -10,7 +10,7 @@ const TaskTracker = () => {
 
     const { data } = useGetTasksQuery();
     
-    function handleSubmit(e) {
+    const handleSubmit = (e) => {
         e.preventDefault();
         fetch("https://emmerce-task-tracker-api-production.up.railway.app/tasks/", {
           method: "POST",
@@ -27,69 +27,6 @@ const TaskTracker = () => {
 
   return (
     <>
-        <div className="flex-col my-4 border-l-8 p-8 w-1/8">
-            <a href="/">
-                <div className="flex-col relative justify-center h-1/4">
-                    <h1 className="text-8xl text-white font-bold damn hover:cursor-pointer">
-                        <span className="hover:font-outline-2 hover:text-black">
-                        T
-                        </span>
-                        <span className="hover:font-outline-2 hover:text-black">
-                        A
-                        </span>
-                        <span className="hover:font-outline-2 hover:text-black">
-                        S
-                        </span>
-                        <span className="hover:font-outline-2 hover:text-black">
-                        K
-                        </span>
-                        <br />
-                        <span className="hover:font-outline-2 hover:text-black">
-                        T
-                        </span>
-                        <span className="hover:font-outline-2 hover:text-black">
-                        R
-                        </span>
-                        <span className="hover:font-outline-2 hover:text-black">
-                        A
-                        </span>
-                        <span className="hover:font-outline-2 hover:text-black">
-                        C
-                        </span>
-                        <span className="hover:font-outline-2 hover:text-black">
-                        K
-                        </span>
-                        <span className="hover:font-outline-2 hover:text-black">
-                        E
-                        </span>
-                        <span className="hover:font-outline-2 hover:text-black">
-                        R
-                        </span>
-                    </h1>
-                </div>
-            </a>
-            <div className="flex flex-col relative justify-end h-3/4">
-                <div className="flex-col relative">
-                    <Link to="/about">
-                        <div className="flex-col relative">
-                            <h1 className="flex align-center pl-4 py-1 text-white text-5xl damn hover:bg-white hover:font-bold hover:text-black hover:text:6xl">ABOUT</h1>
-                        </div>
-                    </Link>
-                    <Link to="/register">
-                        <div className="flex-col relative">
-                            <h1 className="flex align-center pl-4 py-1 text-white text-5xl damn hover:bg-white hover:font-bold hover:text-black hover:text:6xl">SIGNUP</h1>
-                        </div>
-                    </Link>
-                    <Link to="/login">
-                        <div className="flex-col relative">
-                            <h1 className="flex align-center pl-4 py-1 text-white text-5xl damn hover:bg-white hover:font-bold hover:text-black hover:text:6xl">LOGIN</h1>
-                        </div>
-                    </Link>
-                </div>
-                
-            </div>
-            
-        </div>
         <div className="flex flex-col mt-4 border-l justify-start p-8 w-3/4">
             <div className="flex flex-col border justify-center items-center mx-auto w-3/4 p-8">
                 <div className="border-b w-3/4 mx-10 p-4">
@@ -129,7 +66,7 @@ const TaskTracker = () => {
                     <button
                         className="p-3 px-2 pt-2 text-white font-semibold md:bg-blue-800 md:w-full md:hover:bg-blue-700 sm:bg-blue-700"
                         type="submit"
-                        // onClick={login}
+                        onClick={() => window.location.reload(false)}
                     >
                         ADD TASK
                     </button>

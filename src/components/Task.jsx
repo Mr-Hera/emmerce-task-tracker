@@ -14,6 +14,7 @@ const Task = ({ task }) => {
           if (r.ok) {
             r.json().then((task) => console.log(task));
           }
+          window.location.reload(false);
         });
     }
   return (

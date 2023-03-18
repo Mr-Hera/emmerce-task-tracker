@@ -3,9 +3,8 @@ import { Link } from 'react-router-dom';
 import { useParams } from "react-router-dom";
 import { useGetLoggedInQuery } from "../redux/services/taskCore";
 
-const Login = () => {
+const Login = ({ onLogin }) => {
 
-    const [user, setUser] = useState(null);
     const [username, setUserName] = useState("");
     const [password, setPassword] = useState("");
 
@@ -23,7 +22,7 @@ const Login = () => {
           body: JSON.stringify({ username, password }),
         }).then((r) => {
           if (r.ok) {
-            r.json().then((user) => setUser(user));
+            r.json().then((user) => onLogin(user));
           }
         });
         setUserName("");
@@ -32,69 +31,6 @@ const Login = () => {
     
   return (
     <>
-        <div className="flex-col my-4 border-l-8 p-8 w-1/8">
-            <a href="/">
-                <div className="flex-col relative justify-center h-1/4">
-                    <h1 className="text-8xl text-white font-bold damn hover:cursor-pointer">
-                        <span className="hover:font-outline-2 hover:text-black">
-                        T
-                        </span>
-                        <span className="hover:font-outline-2 hover:text-black">
-                        A
-                        </span>
-                        <span className="hover:font-outline-2 hover:text-black">
-                        S
-                        </span>
-                        <span className="hover:font-outline-2 hover:text-black">
-                        K
-                        </span>
-                        <br />
-                        <span className="hover:font-outline-2 hover:text-black">
-                        T
-                        </span>
-                        <span className="hover:font-outline-2 hover:text-black">
-                        R
-                        </span>
-                        <span className="hover:font-outline-2 hover:text-black">
-                        A
-                        </span>
-                        <span className="hover:font-outline-2 hover:text-black">
-                        C
-                        </span>
-                        <span className="hover:font-outline-2 hover:text-black">
-                        K
-                        </span>
-                        <span className="hover:font-outline-2 hover:text-black">
-                        E
-                        </span>
-                        <span className="hover:font-outline-2 hover:text-black">
-                        R
-                        </span>
-                    </h1>
-                </div>
-            </a>
-            <div className="flex flex-col relative justify-end h-3/4">
-                <div className="flex-col relative">
-                    <Link to="/about">
-                        <div className="flex-col relative">
-                            <h1 className="flex align-center pl-4 py-1 text-white text-5xl damn hover:bg-white hover:font-bold hover:text-black hover:text:6xl">ABOUT</h1>
-                        </div>
-                    </Link>
-                    <Link to="/register">
-                        <div className="flex-col relative">
-                            <h1 className="flex align-center pl-4 py-1 text-white text-5xl damn hover:bg-white hover:font-bold hover:text-black hover:text:6xl">SIGNUP</h1>
-                        </div>
-                    </Link>
-                    <Link to="/login">
-                        <div className="flex-col relative">
-                            <h1 className="flex align-center pl-4 py-1 text-white text-5xl damn hover:bg-white hover:font-bold hover:text-black hover:text:6xl">LOGIN</h1>
-                        </div>
-                    </Link>
-                </div>
-                
-            </div>
-            
-        </div>
         <div className="flex flex-col justify-center my-4 p-8 w-3/4">
             <div className="flex flex-col justify-center align-center mx-auto w-3/4 p-8">
                 <div className="border-b w-3/4 m-10 p-4">
@@ -134,6 +70,13 @@ const Login = () => {
                     >
                         SIGN IN
                     </button>
+                    <div className="container mx-auto w-full m-5 p-3 border-spacing-4 bg-sky-500/5">
+                        <p className="text-xl text-white text-center damn">
+                        {" "}
+                        Don't have an account? {" "}
+                        <Link to="/register"><u>SignUp</u></Link>
+                        </p>
+                    </div>
                 </form>
             </div>
         </div>
